@@ -1,0 +1,235 @@
+span.balance {
+  padding-top: 300px;
+}
+
+  #order_cards {
+    display: grid;  
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    /* flex-grow: 1; */
+    padding: 20px;
+    height: 250px;
+  }
+  
+  .order-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-card h2 {
+    font-size: 18px;
+    color: #386641;
+  }
+  
+  .order-card p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .order-card ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .order-card li {
+    font-size: 14px;
+    color: #555;
+  }
+
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Georgia', serif;
+    background-color: #9b3e27;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+  }
+
+  .main {
+    display: flex;
+    flex: 1;
+  }
+
+  .sidebar {
+    background-color: #f4efe7;
+    width: 25%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-right-radius: 30px;
+  }
+
+  .sidebar h1 {
+    font-size: 48px;
+    color: #386641;
+    font-style: italic;
+    margin-bottom: 60px;
+  }
+
+  .sidebar nav {
+    font-size: 18px;
+  }
+
+  .sidebar nav a {
+    display: block;
+    margin-bottom: 15px;
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+  }
+
+  .divider {
+    background-color: #9b3e27;
+    width: 5%;
+  }
+
+  .content {
+    background-color: #9b3e27;
+    width: 70%;
+    padding: 40px 20px;
+  }
+
+  .content h2 {
+    text-align: center;
+    color: #386641;
+    font-size: 36px;
+    margin-bottom: 40px;
+    padding-left: 70px;
+    font-style: italic;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+  }
+
+  .menu-item {
+    text-align: center;
+  }
+
+  .menu-item img {
+    width: 121px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .menu-item p {
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  .menu-item button {
+    margin-top: 8px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid #386641;
+    color: #386641;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .menu-item button:hover {
+    background-color: #386641;
+    color: white;
+  }
+
+  .selected-items {
+    background-color: #f4efe7;
+    padding: 20px;
+    border-top: 2px solid #ccc;
+  }
+
+  .selected-items h3 {
+    font-size: 24px;
+    color: #386641;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .selected-items ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .selected-items li {
+    margin-bottom: 6px;
+  }
+
+  .selected-items button {
+    margin-left: 10px;
+    padding: 2px 6px;
+    font-size: 12px;
+    background-color: #9b3e27;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #9b3e27;
+  }
+
+  #payment-screen {
+    display: none;
+    padding: 30px 50px;
+    text-align: left;
+    background-color: #9b3e27;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    position: absolute;
+    right: 30%;  
+    top: 20%;   
+}
+
+  .checkout-btn {
+    width: 170px; 
+    height: 40px; 
+    font-size: 100px; 
+    float: right; 
+    padding: 20px 20px;
+    background-color: #9b3e27;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .checkout-btn:hover {
+    background-color: #7f2e1e;
+  }
+
+  a.logout_button{
+    color:#386641;
+    padding: 10px 20px;
+    background-color: #386641;
+   
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; 
+    color: white; 
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }

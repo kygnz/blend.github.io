@@ -1,0 +1,136 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Georgia', serif;
+    background-color: #f4efe7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .main {
+    display: flex;
+    flex: 1;
+  }
+
+  #records {
+    margin-top: 20px;
+    overflow-x: auto;
+    padding-left: 20px;    
+    background: #fafafa; 
+    border-radius: 8px; 
+  }
+
+  .sidebar {
+    background-color: #f4efe7;
+    width: 25%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-right-radius: 30px;
+    margin-top: 0;
+  }
+
+  .sidebar h1 {
+    font-size: 48px;
+    color: #386641;
+    font-style: italic;
+    margin-bottom: 60px;
+  }
+
+  .sidebar nav {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar nav a {
+    display: block;
+    margin-bottom: 15px;
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+  }
+
+  .divider {
+    background-color: #9b3e27;
+    width: 5%;
+  }
+
+  .content {
+    background-color: #f4efe7;
+    width: 70%;
+    padding: 40px 20px;
+  }
+
+  .content h2 {
+    text-align: center;
+    color: #386641;
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+
+  span.balance {
+    padding-top: 300px;
+  }
+  
+  a.logout_button{
+    color:#386641;
+    padding: 10px 20px;
+    background-color: #386641;
+    /*color: white;*/
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; 
+    color: white; 
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    
+    
+
+  }
+  h1.account{
+    color:#386641;
+    margin-left: 300px;
+    margin-top: 100px;
+    font-size: 50px;
+    position: absolute;
+  }
+
+  h2{
+    color:black;
+    margin-left: 200px;
+    margin-top: 250px;
+    font-size: 24px;
+  }
+
+  .timestamp-label {
+    font-size: 18px;
+    margin-top: 100px;
+    margin-left: 200px;
+    
+  }
+
+  .button {
+    padding: 10px 20px;
+    background-color: #9b3e27;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 50px;
+    margin-top: 50px;
+    margin-left: 200px;
+  }

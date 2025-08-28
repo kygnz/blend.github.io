@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+    <a href="login.html" class="logout_button">Log Out</a>
+    <div class ="main">
+        
+        <div class="sidebar">
+            <h1>Blend</h1> 
+            <nav id="sidebar_options">
+                <!-- dynamic fron js -->
+            </nav>
+            <span class = "balance" id="balanceDisplay">Coffee Shop Balance: $0.00</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="content">
+            <h2>Menu</h2>
+            <div class="grid" id="menu_layout">
+                <!-- dynamic from js -->
+            </div>
+        </div>
+        
+    </div> 
+
+
+    <div class="selected-items">
+        <h3>Selected Items:</h3>
+        <ul id="item-list">
+            <!-- from js -->
+        </ul>
+        <div class="total" id="total">
+            <!-- from js -->
+        </div>
+        <button class="checkout-btn" onclick="goToPayment()">Checkout</button>
+    </div>
+    
+      <div id="payment-screen">
+        <h2 >Payment</h2> 
+        <p id="final-total">
+            <!-- from js -->
+        </p>
+        <div class="timestamp-label">
+            <label for="Timestamp">Payment Timestamp:</label>
+            <input type="datetime-local" id="Timestamp" name="Timestamp">
+        </div>
+        <label for="payment-method">Choose payment method:</label> 
+        <select id="payment-method"> 
+            <option>Credit Card</option>
+            <option>Cash</option>
+            <option>App</option>
+        </select>
+        <br><br>
+        <button onclick="confirmPayment()">Confirm Payment</button> 
+      </div>
+
+
+
+   
+    <script src="sidebar.js"></script>
+    <script src="menu.js"></script>
+    <script src="balance.js"></script>
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Manager Dashboard</title>
+  <link rel="stylesheet" href="inventory.css">
+</head>
+<body>
+  <!-- <h1>Manager: Home</h1> -->
+  <ul id="employee-list"></ul>
+  <a href="login.html" class="logout_button">Log Out</a>
+  
+  <div class="main">
+    <div class="sidebar">
+      <h1>Blend</h1>
+      <nav id="sidebar_options">
+      </nav>
+      <span class="balance" id="balanceDisplay">Coffee Shop Balance: $0.00</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="square">
+        <div class="bottom-bar">
+            <span class="total-price" id="totalPrice">Total: $0</span>
+            <button class="buy-button" onclick="buyItems()">Buy</button>
+          </div>
+    <div class="grid-container" id="inventoryGrid">
+       <!-- from js -->
+      </div>
+    
+      </div>
+
+
+      <script src="inventory.js"></script>
+      <script src="sidebar.js"></script>
+      <script src="balance.js"></script>
+</body>
+</html>
+
+

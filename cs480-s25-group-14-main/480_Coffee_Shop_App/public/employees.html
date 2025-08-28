@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Manager Dashboard</title>
+  <link rel="stylesheet" href="employees.css">
+</head>
+<body>
+  <!-- <h1>Manager: Home</h1> -->
+  <ul id="employee-list"></ul>
+  <a href="login.html" class="logout_button">Log Out</a>
+  <div class="main">
+    <div class="sidebar">
+      <h1>Blend</h1>
+      <nav id="sidebar_options">
+      </nav>
+      <span class = "balance" id="balanceDisplay">Coffee Shop Balance: $0.00</span>
+    </div>
+
+
+    <div class="divider"></div>
+    <div>
+      <div><h2 class = "manage">Employee Management</h2></div>
+        <button class="optionButton1" onclick="showAddForm()">Add</button>
+        <button class="optionButton2" onclick="showEmployeeListModalForRemove()">Remove</button>
+        <button class="optionButton3" onclick="showEmployeeListModalForEdit()">Edit</button>
+        <div class="square"></div>
+
+
+    </div>
+    <!-- Modal for Add Employee -->
+    <div id="addFormModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('addFormModal')">&times;</span>
+        <h2 class="formheaders">Add Employee:</h2>
+        <form id="addEmployeeForm" onsubmit="submitAddForm(event)">
+          <h3 class="caption">Select Role:</h3>
+          <select name="role" id="roleSelect" required>
+            <option value="">Select Role</option>
+            <option value="manager">Manager</option>
+            <option value="barista">Barista</option>
+            <option value="hybrid">Hybrid</option>
+          </select>
+          <h3 class ="caption">Enter Employee Name:</h3>
+          <input type="text" name="name" placeholder="Employee Name" required>
+          <h3 class ="caption">Enter Employee Email:</h3>
+          <input type="email" name="email" placeholder="Employee Email" required>
+          <h3 class ="caption">Enter Employee SSN:</h3>
+          <input type="numeric" name="ssn" placeholder="Employee SSN" required>
+          <h3 class ="caption">Enter Employee Salary:</h3>
+          <input type="number" name="salary" placeholder="Employee Salary" required>
+          <h3 class ="caption">Enter Employee Password:</h3>
+          <input type="text" name="password" placeholder="Employee Password" required>
+          <h3 class ="caption">Enter Employee Schedule:</h3>
+          <input type="text" name="schedule" placeholder="Employee Schedule" required>
+          <!-- <h3 class ="caption">Enter Employee Role:</h3> -->
+          <!-- <input type="role" name="role" placeholder="Employee Role" required> -->
+          <div id="percentOwnedField" style="display: none;">
+            <h3 class="caption">Percentage Owned:</h3>
+            <input type="number" name="percentOwned" placeholder="Percentage Owned">
+          </div>
+          <button class="submit" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="successModal1" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('successModal1')">&times;</span>
+        <h2>Employee Added</h2>
+        <p>The employee has been successfully added.</p>
+      </div>
+    </div>
+  
+    <div id="employeeListModalForEdit" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('employeeListModalForEdit')">&times;</span>
+        <h2 class = "headE">Select an Employee to Edit</h2>
+        <ul class = "work" id="employeeListUlForEdit">
+  
+        </ul>
+  
+      </div>
+    </div>
+
+    <div id="editFormModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('editFormModal')">&times;</span>
+        <h2 class = "formheaders">Edit Employee</h2>
+        <form id="editEmployeeForm" onsubmit="submitEditForm(event)">
+          <h3 class="caption">Select Role:</h3>
+          <select name="role" id="roleSelect2" required>
+            <option value="">Select Role</option>
+            <option value="manager">Manager</option>
+            <option value="barista">Barista</option>
+            <option value="hybrid">Hybrid</option>
+          </select>
+    
+         
+          <h3 class ="caption">Edit Employee Name:</h3>
+          <input type="text" name="name" id="employeeName" placeholder="Employee Name" required>
+          <h3 class ="caption">Edit Employee Email:</h3>
+          <input type="email" name="email" id="employeeEmail" placeholder="Employee Email" required>
+          <h3 class ="caption">Edit Employee Salary:</h3>
+          <input type="number" name="salary" id="employeeSalary" placeholder="Employee Salary" required>
+          <h3 class ="caption">Edit Employee SSN:</h3>
+          <input type="number" name="ssn" id="employeeSSN" placeholder="Employee SSN" required>
+          <h3 class ="caption">Edit Employee Schedule:</h3>
+          <input type="text" name="schedule" id="employeeSchedule" placeholder="Employee Schedule" required>
+          <h3 class ="caption">Edit Employee Password:</h3>
+          <input type="text" name="password" id="employeePassword" placeholder="Employee Password" required>
+          <div id="percentOwnedField2" style="display: none;">
+            <h3 class="caption">Percentage Owned:</h3>
+            <input type="number" name="percentOwned" placeholder="Percentage Owned">
+          </div>
+          <button class = "submit" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+  <!-- to remove an employee -->
+  <div id="removeEmployeeListModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('removeEmployeeListModal')">&times;</span>
+      <h2 class = "formheader3">Select an Employee to Remove</h2>
+      <ul class = "work2" id="employeeListUlForRemove">
+      </ul>
+
+    </div>
+  </div>
+
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('successModal')">&times;</span>
+      <h2 >Success</h2>
+      <p id="successMessage">Employee details updated successfully!</p>
+      <i class="fa fa-check-circle" style="color: white; font-size: 50px;"></i>  
+    </div>
+  </div>
+
+  <div id="removeConfirmationModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('removeConfirmationModal')">&times;</span>
+      <h2>Are you sure you want to remove <span id ="employeeNametoRemove"></span></h2>
+        <button onclick="removeEmployee()">Yes</button>
+        <button onclick="closeModal('removeConfirmationModal')">No</button>
+     
+    </div>
+  </div>
+  
+    
+
+  
+  <script src="employees.js"></script>
+  <script src="balance.js"></script>
+  <script src="sidebar.js"></script>
+</body>
+</html>

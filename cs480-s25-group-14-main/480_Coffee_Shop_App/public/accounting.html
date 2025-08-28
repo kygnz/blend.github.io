@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Manager Dashboard</title>
+  <link rel="stylesheet" href="accounting.css">
+</head>
+<body>
+  <!-- <h1>Manager: Home</h1> -->
+  <ul id="employee-list"></ul>
+ 
+  <a href="login.html" class="logout_button">Log Out</a>
+  <div class="main">
+    <div class="sidebar">
+       
+      <h1>Blend</h1>
+      <nav id="sidebar_options">
+      </nav>
+      <span class = "balance" id="balanceDisplay">Coffee Shop Balance: $0.00</span>
+    </div>
+
+    <div class="divider"></div>
+    <div>
+        <h1 class = "account">Account Reports:</h1>
+    </div>
+    <div>
+        <h2>Amount: $<span id="amount">0</span></h2>
+        <div class="timestamp-label">
+            <label for="startTimestamp">Start Timestamp:</label>
+            <input type="datetime-local" id="startTimestamp" name="startTimestamp">
+          </div>
+        
+          <div class="timestamp-label">
+            <label for="endTimestamp">End Timestamp:</label>
+            <input type="datetime-local" id="endTimestamp" name="endTimestamp">
+          </div>
+          <button class ="button" onclick="loadAccounting()">Calculate Time Range</button>
+          <div id="records"></div>
+        </div>
+
+        <script src="accounting.js"></script>
+<script src="sidebar.js"></script>
+<script src="balance.js"></script>
+
+</body>
+</html>
